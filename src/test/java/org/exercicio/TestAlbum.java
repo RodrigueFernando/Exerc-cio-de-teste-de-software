@@ -29,5 +29,10 @@ class TestAlbum {
         Album pagina = new Album(7, 5);
         assertFalse(pagina.ColarFotos(-3, 4, 3, 4));
     }
-
+    @Test
+    @DisplayName("Teste com dimensões ")
+    public void testDimensoesZeroInvalido() {
+        Album pagina = new Album(7, 5);
+        assertFalse(pagina.ColarFotos(0, 4, 3, 4));
+    }
 }
