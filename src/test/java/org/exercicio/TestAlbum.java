@@ -10,12 +10,17 @@ import static org.assertj.core.api.Assertions.*;
 
 class TestAlbum {
     @Test
-    @DisplayName("Teste fotos quecabem na página")
+    @DisplayName("Teste fotos que cabem na página")
     public void testFotosCabemValidas() {
         Album pagina = new Album(5, 7);
         assertTrue(pagina.ColarFotos(3,4,3,4));
         //assertThat(pagina.ColarFotos(3, 4, 3, 4), equalTo(true));
 
+    }
+    @Test
+    public void testDimensoesNegativasInvalido() {
+        Album pagina = new Album(7, 5);
+        assertFalse(pagina.ColarFotos(-3, 4, 3, 4), "Fotos com dimensões negativas .");
     }
 
 
