@@ -17,12 +17,17 @@ class TestAlbum {
         //assertThat(pagina.ColarFotos(3, 4, 3, 4), equalTo(true));
 
     }
+
+    @Test
+    @DisplayName("Testar foto muito grande")
+    public void testFotoNaoValida() {
+        Album pagina = new Album(10, 10);
+        assertFalse(pagina.ColarFotos(10, 100, 3, 3));
+    }
     @Test
     public void testDimensoesNegativasInvalido() {
         Album pagina = new Album(7, 5);
-        assertFalse(pagina.ColarFotos(-3, 4, 3, 4), "Fotos com dimensões negativas .");
+        assertFalse(pagina.ColarFotos(-3, 4, 3, 4));
     }
-
-
 
 }
