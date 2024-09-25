@@ -35,4 +35,11 @@ class TestAlbum {
         Album pagina = new Album(7, 5);
         assertFalse(pagina.ColarFotos(0, 4, 3, 4));
     }
+
+    @Test
+    @DisplayName("Testar limites valores máximos")
+    public void testLimiteMaximo() {
+        Album pagina = new Album(Integer.MAX_VALUE, Integer.MAX_VALUE);
+        assertTrue(pagina.ColarFotos(1000000, 1000000, 1000000, 1000000));
+    }
 }
